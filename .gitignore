@@ -1,3 +1,6 @@
+# nix specific
+.direnv
+
 # Junk files
 *.bak
 *.swp
