@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI,    KC_X,    KC_C,    KC_M,    KC_P,    KC_V,                         KC_Z, KC_COMM,  KC_DOT, KC_QUOT, KC_SLSH, KC_RALT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            KC_ENT, KC_LSFT, KC_LCTL,      MO(1),  KC_SPC,   MO(2)
+                                           KC_LCTL, KC_LSFT, QK_REP,       LT(1, KC_ENT),  KC_SPC,   MO(2)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -75,6 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Combos need to not interfere with rolls
 // Combos should not be fat fingering based, at least initally
+// https://docs.qmk.fm/features/combo#dictionary-management
 const uint16_t PROGMEM oy_combo[] = {KC_O, KC_Y, COMBO_END};
 combo_t key_combos[] = {
     COMBO(oy_combo, KC_BSPC),
