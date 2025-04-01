@@ -3,13 +3,12 @@
 
 #include QMK_KEYBOARD_H
 
-// apt layout
-//
-// wgdfb qluoy
-// rsthk jnea
-// xcmpv z,.'/
-// wgefbqlioy
-// rsdhk
+enum layers {
+    BASE_LAYER,
+    NUM_LAYER,
+    NAV_LAYER,
+    MISC_LAYER,
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x6_3(
@@ -20,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_X,    KC_C,    KC_M,    KC_P,    KC_V,                         KC_Z, KC_COMM,  KC_DOT, KC_QUOT, KC_SLSH,  KC_ESC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          MO(1),   KC_LCTL, KC_LSFT,     KC_SPC,   KC_ENT, KC_RALT
+                                          MO(1),   KC_LSFT, KC_LCTL,     MO(2),   KC_SPC, MO(3)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -60,4 +59,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           KC_LGUI, _______,  KC_SPC,     KC_ENT, _______, KC_RALT
                                       //`--------------------------'  `--------------------------'
   )
+};
+
+// Combos need to not interfere with rolls
+// Combos should not be fat fingering based, at least initally
+const uint16_t PROGMEM oy_combo[] = {KC_O, KC_Y, COMBO_END};
+combo_t key_combos[] = {
+    COMBO(oy_combo, KC_BSPC),
 };
