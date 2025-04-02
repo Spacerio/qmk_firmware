@@ -1,0 +1,2 @@
+//   name     result   chord keys
+COMB(OY_BSPC, KC_BSPC, KC_O, KC_Y)

@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
+#include <g/keymap_combo.h>
 
 enum layers {
     BASE_LAYER,
@@ -38,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [SYM_LAYER] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, KC_CIRC, KC_PERC, KC_SLSH, KC_AMPR, XXXXXXX,                      XXXXXXX, KC_LCBR, KC_LBRC, KC_RBRC, KC_RCBR, XXXXXXX,
+      QK_BOOT, KC_CIRC, KC_PERC, KC_SLSH, KC_AMPR, XXXXXXX,                      XXXXXXX, KC_LCBR, KC_LBRC, KC_RBRC, KC_RCBR, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_UNDS, KC_MINS, KC_ASTR,  KC_EQL, KC_TILD,                       KC_GRV,  KC_DLR, KC_LPRN, KC_RPRN, KC_EXLM, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -73,10 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
-// Combos need to not interfere with rolls
-// Combos should not be fat fingering based, at least initally
-// https://docs.qmk.fm/features/combo#dictionary-management
-const uint16_t PROGMEM oy_combo[] = {KC_O, KC_Y, COMBO_END};
-combo_t key_combos[] = {
-    COMBO(oy_combo, KC_BSPC),
-};
+// 1. Enable home row mods with chordal hold
+// https://docs.qmk.fm/tap_hold#chordal-hold
+// 2. Define each combo seperately, one by one
+// 3. Modifier combos?
