@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI,    KC_X,    KC_C,    KC_M,    KC_P,    KC_V,                         KC_Z, KC_COMM,  KC_DOT, KC_QUOT, KC_SLSH, KC_RALT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                           KC_LCTL, KC_LSFT, QK_REP,       LT(1, KC_ENT),  KC_SPC,   MO(2)
+                                    KC_LCTL, LSFT_T(QK_REP), QK_REP,   LT(2, KC_ENT),  LT(1, KC_SPC),   MO(2)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LGUI, XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX,                      KC_HOME, KC_PGDN, KC_PGUP,  KC_END, XXXXXXX, KC_RALT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            MO(3), KC_LSFT, KC_LCTL,    _______,  KC_SPC,   MO(2)
+                                            MO(3), KC_LSFT,  QK_REP,    _______,  KC_SPC,   MO(2)
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -95,10 +95,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
-// 1. Enable home row mods with chordal hold
-// https://docs.qmk.fm/tap_hold#chordal-hold
-// 2. Define each combo seperately, one by one
-// 3. Modifier combos?
+// Modifiers and whitespace on right hand
+// Layers on left hand
+// OR
+// Modifiers and rep on left,
+// Whitespace and layers on the right
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT_split_3x6_3(
         'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
@@ -106,3 +107,19 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
         'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
                        '*', '*', '*',  '*', '*', '*'
     );
+
+static uint16_t last_keycode = KC_NO;
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed && keycode != LSFT_T(QK_REP)) {
+        last_keycode = keycode;
+    }
+    switch (keycode) {
+        case LSFT_T(QK_REP):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(last_keycode);
+                return false;
+            }
+            break;
+    }
+    return true;
+}
