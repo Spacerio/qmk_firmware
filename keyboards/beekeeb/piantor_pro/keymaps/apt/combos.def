@@ -1,7 +1,15 @@
 //   name     result   chord keys
 COMB(IY_BSPC, KC_BSPC, KC_I, KC_Y)
 COMB(RW_ESC,  KC_ESC,  KC_R, KC_W)
+// Symbols
 COMB(HP_UNDS, KC_UNDS, KC_H, KC_P)
+// Modifiers
+COMB(GS_LGUI, KC_LGUI, KC_G, KC_S)
+COMB(DT_LCTL, KC_LCTL, KC_D, KC_T)
+COMB(FH_LALT, KC_LALT, KC_F, KC_H)
+COMB(LN_LALT, KC_LALT, KC_L, KC_N)
+COMB(UE_LCTL, KC_LCTL, KC_U, KC_E)
+COMB(UE_LGUI, KC_LGUI, KC_U, KC_E)
 
 // macro to update the combo from the name, copy with ^v$y to avoid newline
 // 0f_€ý5lyt,€ý5f_€ý5lvt,€ý5pF(€ý5lvy2f,€ý5;hvpF_€ý5;;hvyf)€ý5hvpj
