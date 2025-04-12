@@ -1,2 +1,7 @@
 //   name     result   chord keys
-COMB(OY_BSPC, KC_BSPC, KC_O, KC_Y)
+COMB(IY_BSPC, KC_BSPC, KC_I, KC_Y)
+COMB(RW_ESC,  KC_ESC,  KC_R, KC_W)
+COMB(HP_UNDS, KC_UNDS, KC_H, KC_P)
+
+// macro to update the combo from the name, copy with ^v$y to avoid newline
+// 0f_€ý5lyt,€ý5f_€ý5lvt,€ý5pF(€ý5lvy2f,€ý5;hvpF_€ý5;;hvyf)€ý5hvpj
