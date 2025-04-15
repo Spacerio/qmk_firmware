@@ -1,10 +1,11 @@
 //   name     result   chord keys
-COMB(OY_BSPC, KC_BSPC, KC_O, KC_Y)
 COMB(RW_ESC,  KC_ESC,  KC_R, KC_W)
 // Symbols
 COMB(BK_EXLM, KC_EXLM, KC_B, KC_K)
 COMB(FH_MINS, KC_MINS, KC_F, MT_H)
 COMB(UE_SCLM, KC_SCLN, KC_U, MT_E)
+// Three character
+COMB(YOU_BSPC, C(KC_BSPC), KC_Y, KC_O, KC_U)
 
 // macro to update the combo from the name, copy with ^v$y to avoid newline
 // 0f_ý5lyt,ý5f_ý5lvt,ý5pF(ý5lvy2f,ý5;hvpF_ý5;;hvyf)ý5hvpj
