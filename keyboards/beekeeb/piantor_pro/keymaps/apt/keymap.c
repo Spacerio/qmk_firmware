@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_ESC,    KC_R,    MT_S,    MT_T,    MT_H,    KC_K,                         KC_J,    MT_N,    MT_E,    MT_A,    KC_I, KC_SCLN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LGUI,    KC_X,    KC_C,    KC_M,    KC_P,    KC_V,                         KC_Z, KC_COMM,  KC_DOT, KC_QUOT, KC_SLSH, KC_RALT,
+      KC_MINS,    KC_X,    KC_C,    KC_M,    KC_P,    KC_V,                         KC_Z, KC_COMM,  KC_DOT, KC_QUOT, KC_SLSH, KC_EXLM,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                     KC_LCTL, LSFT_T(QK_REP), QK_REP,   LT(2, KC_ENT),  LT(1, KC_SPC),   MO(2)
                                       //`--------------------------'  `--------------------------'
@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [NUM_LAYER] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB, XXXXXXX,    KC_1,    KC_2,    KC_3, XXXXXXX,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
+       KC_TAB, XXXXXXX,    KC_1,    KC_2,    KC_3, XXXXXXX,                      KC_HOME, KC_PGDN, KC_PGUP,  KC_END,    KC_0, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LCTL,    KC_0,    MT_4,    MT_5,    MT_6, XXXXXXX,                      KC_LEFT, MT_DOWN,   MT_UP,MT_RIGHT, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
