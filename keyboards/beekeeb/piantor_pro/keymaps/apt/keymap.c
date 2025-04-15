@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_MINS,    KC_X,    KC_C,    KC_M,    KC_P,    KC_V,                         KC_Z, KC_COMM,  KC_DOT, KC_QUOT, KC_SLSH, KC_EXLM,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                    KC_LCTL, LSFT_T(QK_REP), QK_REP,   LT(2, KC_ENT),  LT(1, KC_SPC),   MO(2)
+                                    KC_LCTL, LSFT_T(QK_REP), OSL(2),   LT(2, KC_ENT),  LT(1, KC_SPC),   MO(2)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -102,3 +102,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
+
+// for thumb keys
+// space, enter, shift, NUM_LAYER, SYM_LAYER, REP
