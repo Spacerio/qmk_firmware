@@ -11,27 +11,6 @@ enum layers {
     MISC_LAYER,
 };
 
-// BASE_LAYER mod taps
-#define MT_S MT(MOD_LGUI, KC_S)
-#define MT_T MT(MOD_LCTL, KC_T)
-#define MT_H MT(MOD_LALT, KC_H)
-#define MT_N MT(MOD_LALT, KC_N)
-#define MT_E MT(MOD_LCTL, KC_E)
-#define MT_A MT(MOD_LGUI, KC_A)
-// NUM_LAYER mod taps
-#define MT_4 MT(MOD_LGUI, KC_4)
-#define MT_5 MT(MOD_LCTL, KC_5)
-#define MT_6 MT(MOD_LALT, KC_6)
-#define MT_DOWN MT(MOD_LALT, KC_DOWN)
-#define MT_UP MT(MOD_LCTL, KC_UP)
-#define MT_RIGHT MT(MOD_LGUI, KC_RIGHT)
-// SYM_LAYER mod taps
-#define MT_MINS MT(MOD_LGUI, KC_MINS)
-#define MT_ASTR MT(MOD_LCTL, KC_ASTR)
-#define MT_EQL MT(MOD_LALT, KC_EQL)
-#define MT_DLR MT(MOD_LALT, KC_DLR)
-#define MT_RPRN MT(MOD_LCTL, KC_RPRN)
-#define MT_LPRN MT(MOD_LGUI, KC_LPRN)
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE_LAYER] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
